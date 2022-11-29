@@ -1,7 +1,11 @@
-import { Express } from "express";
-
+const express = require("express");
 const pbsm = express();
+const port = 3000;
 
-pbsm.listen(3000, () =>
-	console.log("PBSM BE is active & listening to the FE ")
-);
+pbsm.get("/", (req, res) => {
+	res.end("Hello World!");
+});
+
+pbsm.listen(port, () => {
+	console.log("PBSM is listening to the FE");
+});
