@@ -1,9 +1,10 @@
+require("dotenv").config();
 const express = require("express");
 const pbsm = express();
-const port = 3000;
+const port = process.env.PORT;
 
 pbsm.get("/", (req, res) => {
-	res.end("Hello World!");
+	res.send("Hello World!");
 });
 
 pbsm.listen(port, () => {
